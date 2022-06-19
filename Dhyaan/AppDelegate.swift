@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Dhyaan
 //
-//  Created by Shreya Jhala on 6/18/22.
+//  Created by Shreya Zala on 6/18/22.
 //
 
 import UIKit
