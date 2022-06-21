@@ -13,6 +13,7 @@
 		2E55267A285EE0E800490A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E552679285EE0E800490A40 /* Assets.xcassets */; };
 		2E55267D285EE0E800490A40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E55267B285EE0E800490A40 /* LaunchScreen.storyboard */; };
 		2E552685285EEBCD00490A40 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E552684285EEBCD00490A40 /* SliderViewController.swift */; };
+		2EF4883B286152E900140C2A /* gongSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EF4883A286152E900140C2A /* gongSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2E55267C285EE0E800490A40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E55267E285EE0E800490A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E552684285EEBCD00490A40 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		2EF4883A286152E900140C2A /* gongSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gongSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +61,11 @@
 				2E552670285EE0E200490A40 /* AppDelegate.swift */,
 				2E552672285EE0E200490A40 /* SceneDelegate.swift */,
 				2E552676285EE0E200490A40 /* Main.storyboard */,
+				2E552684285EEBCD00490A40 /* SliderViewController.swift */,
+				2EF4883A286152E900140C2A /* gongSound.mp3 */,
 				2E552679285EE0E800490A40 /* Assets.xcassets */,
 				2E55267B285EE0E800490A40 /* LaunchScreen.storyboard */,
 				2E55267E285EE0E800490A40 /* Info.plist */,
-				2E552684285EEBCD00490A40 /* SliderViewController.swift */,
 			);
 			path = Dhyaan;
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 				2E55267D285EE0E800490A40 /* LaunchScreen.storyboard in Resources */,
 				2E55267A285EE0E800490A40 /* Assets.xcassets in Resources */,
 				2E552678285EE0E200490A40 /* Main.storyboard in Resources */,
+				2EF4883B286152E900140C2A /* gongSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
