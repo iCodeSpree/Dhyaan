@@ -1,49 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n8h-og-UVA">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Stats-->
+        <scene sceneID="OB0-59-t0B">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dhyaan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="C9b-AJ-PK5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dDV-PI-l0N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9UG-JV-amR"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.63137254899999995" green="0.85882352939999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" id="AgV-5J-cWi">
+                        <color key="badgeColor" red="0.63137254899999995" green="0.85882352939999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6QM-B1-VJL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="256"/>
+        </scene>
+        <!--Slider View Controller-->
+        <scene sceneID="C9V-1R-EK2">
+            <objects>
+                <viewController id="6GD-6g-i9K" customClass="SliderViewController" customModule="Dhyaan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZXP-4g-7MS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImgBudha" translatesAutoresizingMaskIntoConstraints="NO" id="YKX-A5-aST">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImgBudha" translatesAutoresizingMaskIntoConstraints="NO" id="dQq-EU-r8R">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="0U9-nP-9nT"/>
-                                    <constraint firstAttribute="height" constant="896" id="RHy-nJ-z21"/>
+                                    <constraint firstAttribute="width" constant="414" id="aQb-hu-Uny"/>
+                                    <constraint firstAttribute="height" constant="813" id="zbp-4i-ziZ"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFm-WH-2XB">
+                                <rect key="frame" x="20" y="671" width="11" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGW-LT-qbL">
+                                <rect key="frame" x="360" y="671" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select gong interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vI-ss-LvZ">
+                                <rect key="frame" x="131" y="585" width="152" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mf-eI-buY">
+                                <rect key="frame" x="20" y="557" width="11" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMF-XI-tcq">
+                                <rect key="frame" x="373" y="557" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select number of minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Li-nX-RF5">
+                                <rect key="frame" x="109" y="472" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="Hzt-KS-z3c">
+                                <rect key="frame" x="18" y="520" width="378" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.10980392160000001" green="0.2470588235" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.63137254899999995" green="0.85882352939999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="durationSliderAct:" destination="6GD-6g-i9K" eventType="valueChanged" id="LP3-23-nMV"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="65P-Q9-YOR">
+                                <rect key="frame" x="18" y="633" width="378" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.10980392160000001" green="0.2470588235" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.63137254899999995" green="0.85882352939999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="gongIntervalAct:" destination="6GD-6g-i9K" eventType="valueChanged" id="7SD-Ku-95k"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWL-Nr-5CP">
+                                <rect key="frame" x="172" y="712" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="startButton"/>
+                                <connections>
+                                    <action selector="startSessionBtnTapped:" destination="6GD-6g-i9K" eventType="touchUpInside" id="vJ9-Ch-8sG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtK-yo-E4J">
+                                <rect key="frame" x="0.0" y="267" width="414" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" red="0.63137254899999995" green="0.85882352939999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="4sP-Un-ioJ"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.63137254899999995" green="0.85882352939999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YKX-A5-aST" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8ix-5f-RrU"/>
-                            <constraint firstItem="YKX-A5-aST" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KuY-wc-Rmg"/>
-                            <constraint firstAttribute="bottom" secondItem="YKX-A5-aST" secondAttribute="bottom" id="j23-Xu-0Bv"/>
-                            <constraint firstItem="YKX-A5-aST" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uCe-ZX-tW7"/>
+                            <constraint firstItem="dQq-EU-r8R" firstAttribute="bottom" secondItem="4sP-Un-ioJ" secondAttribute="bottom" id="GU6-xQ-kJy"/>
+                            <constraint firstItem="dQq-EU-r8R" firstAttribute="trailing" secondItem="4sP-Un-ioJ" secondAttribute="trailing" id="Twl-cr-oBR"/>
+                            <constraint firstItem="dQq-EU-r8R" firstAttribute="leading" secondItem="4sP-Un-ioJ" secondAttribute="leading" id="XxZ-MD-jeQ"/>
+                            <constraint firstItem="dQq-EU-r8R" firstAttribute="top" secondItem="ZXP-4g-7MS" secondAttribute="top" id="k0B-rk-ZXA"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="omImg" id="zf7-pX-apq">
+                        <color key="badgeColor" red="0.63137254899999995" green="0.85882352939999995" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="durationLabel" destination="kMF-XI-tcq" id="BZ3-yo-cnS"/>
+                        <outlet property="durationSlider" destination="Hzt-KS-z3c" id="qhS-RE-Dbb"/>
+                        <outlet property="gongIntervalLbl" destination="gGW-LT-qbL" id="z5N-ck-M7b"/>
+                        <outlet property="gongIntervalSlider" destination="65P-Q9-YOR" id="w9P-T6-ML5"/>
+                        <outlet property="meditateBtn" destination="zf7-pX-apq" id="32e-oR-Zt9"/>
+                        <outlet property="startSessionBtn" destination="xWL-Nr-5CP" id="FoE-g6-jeN"/>
+                        <outlet property="timerLbl" destination="PtK-yo-E4J" id="bPf-RE-ArB"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNl-yF-OLF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86.956521739130437" y="97.767857142857139"/>
+            <point key="canvasLocation" x="453.62318840579712" y="-352.23214285714283"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="eeg-NU-3JX">
+            <objects>
+                <tabBarController id="n8h-og-UVA" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XfI-sE-vR0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6GD-6g-i9K" kind="relationship" relationship="viewControllers" id="vpT-5f-yXR"/>
+                        <segue destination="C9b-AJ-PK5" kind="relationship" relationship="viewControllers" id="7sv-1A-cl6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Plf-1u-Gm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-435" y="-48"/>
         </scene>
     </scenes>
     <resources>
         <image name="bgImgBudha" width="428" height="926"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="omImg" width="32" height="32"/>
+        <image name="startButton" width="70" height="70"/>
     </resources>
 </document>
