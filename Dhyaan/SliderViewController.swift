@@ -20,18 +20,20 @@ class SliderViewController: UIViewController {
     
     var sliderValue = 0
     var gongSoundPlayer: AVAudioPlayer?
-    var isSessionActive: Bool = true
+    var isSessionInactive: Bool = true
     var timer: Timer?
     var isTimerStarted = false
     var time = Int()
-    var initialValue = 0
-    var gongFlag = false
+    //var initialValue = 0
+    var gongValue = 0
+    var gongFlag = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarConfig()
         timerLblConfig()
         timerLbl.isHidden = true
+        gongIntervalLbl.isHidden = true
     }
     
     @IBAction func durationSliderAct(_ sender: UISlider) {
@@ -41,39 +43,56 @@ class SliderViewController: UIViewController {
             durationLabel.text = "60"
             sliderValue = 60
             time = 60 * 60
+            gongIntervalSlider.isEnabled = false
+            gongIntervalLbl.isHidden = true
+            timerLbl.isHidden = true
         } else {
             let currentValue = Int(sender.value)
             durationLabel.text = "\(currentValue)"
-            timerLbl.text = currentValue == 0 ? "1:00" : "\(currentValue):00"
+            if currentValue != 0 {
+                timerLbl.text = "\(currentValue):00"
+            }
+            if currentValue == 60 {
+                timerLbl.text = "1:00:00"
+            }
             sliderValue = currentValue
             time = currentValue * 60
             sliderValue = currentValue > 30 ? 30 : (currentValue > 15 && currentValue < 30) ? 15 : currentValue
-            initialValue = currentValue
+            gongIntervalSlider.isEnabled = true
+            //initialValue = currentValue
         }
+        
     }
     
     @IBAction func gongIntervalAct(_ sender: UISlider) {
         gongIntervalSliderConfig()
+        gongIntervalLbl.isHidden = false
         if sender.value == 0 {
             gongIntervalLbl.text = "\(sliderValue)"
         } else {
             let currentValue = Int(sender.value)
             gongIntervalLbl.text = "\(currentValue)"
+            gongValue = currentValue
+            gongFlag = 1
         }
     }
     
     @IBAction func startSessionBtnTapped(_ sender: Any) {
-        if isSessionActive {
-            startSessionBtn.setImage(UIImage(named: "stopButton"), for: .normal)
-            isSessionActive = false
-            startTimer()
+        if isSessionInactive {
+            if timerLbl.isHidden == false {
+                startSessionBtn.setImage(UIImage(named: "stopButton"), for: .normal)
+                isSessionInactive = false
+                startTimer()
+                gongSoundPlay()
+            }
         } else {
             stopTimer()
             startSessionBtn.setImage(UIImage(named: "startButton"), for: .normal)
-            isSessionActive = true
-            timerLbl.text = "\(initialValue):00"
+            isSessionInactive = true
+            timerLbl.text = "00:00"
+            resetSettings()
+            gongSoundStop()
         }
-        gongSoundConfig()
     }
     
     
@@ -93,8 +112,7 @@ class SliderViewController: UIViewController {
         gongIntervalSlider.maximumValue = Float(sliderValue)
     }
     
-    func gongSoundConfig() {
-        
+    func gongSoundPlay() {
         let urlString = Bundle.main.path(forResource: "gongSound", ofType: "mp3")
         do {
             try AVAudioSession.sharedInstance().setMode(.default)
@@ -107,13 +125,26 @@ class SliderViewController: UIViewController {
             
             player.play()
             
+        } catch {
+            print("something went wrong")
+        }
+    }
+    
+    func gongSoundStop() {
+        let urlString = Bundle.main.path(forResource: "gongSound", ofType: "mp3")
+        do {
+            try AVAudioSession.sharedInstance().setMode(.default)
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            
+            guard let urlString = urlString else { return }
+            
+            gongSoundPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+            guard let player = gongSoundPlayer else { return }
+            
             let btnImage = startSessionBtn.imageView?.image
-            if btnImage == UIImage(named: "stopButton") {
+            if btnImage == UIImage(named: "stopButton") && gongFlag == 0 {
                 player.stop()
             }
-            
-            
-            
         } catch {
             print("something went wrong")
         }
@@ -140,7 +171,27 @@ class SliderViewController: UIViewController {
        if time > 0 {
            time -= 1
            timerLbl.text = formatTime()
+           if gongValue <= 9 && timerLbl.text == "0\(gongValue):00" {
+               gongSoundPlay()
+           } else if gongValue > 9 && timerLbl.text == "\(gongValue):00" {
+               gongSoundPlay()
+           }
+           if timerLbl.text == "00:00" {
+               resetSettings()
+               gongSoundPlay()
+               startSessionBtn.setImage(UIImage(named: "startButton"), for: .normal)
+               timer?.invalidate()
+               timer = nil
+           }
        }
+    }
+    
+    func resetSettings() {
+        timerLbl.isHidden = true
+        durationSlider.setValue(0.0, animated: true)
+        gongIntervalSlider.setValue(0.0, animated: true)
+        durationLabel.text = "60"
+        gongIntervalLbl.isHidden = true
     }
     
     func formatTime()->String{
