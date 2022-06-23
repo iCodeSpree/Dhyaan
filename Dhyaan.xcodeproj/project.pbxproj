@@ -14,6 +14,8 @@
 		2E55267D285EE0E800490A40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E55267B285EE0E800490A40 /* LaunchScreen.storyboard */; };
 		2E552685285EEBCD00490A40 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E552684285EEBCD00490A40 /* SliderViewController.swift */; };
 		2EF4883B286152E900140C2A /* gongSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EF4883A286152E900140C2A /* gongSound.mp3 */; };
+		2EF4885D286420AA00140C2A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4885C286420AA00140C2A /* StatsViewController.swift */; };
+		2EF4885F28642B7A00140C2A /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4885E28642B7A00140C2A /* StatsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2E55267E285EE0E800490A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E552684285EEBCD00490A40 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		2EF4883A286152E900140C2A /* gongSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gongSound.mp3; sourceTree = "<group>"; };
+		2EF4885C286420AA00140C2A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		2EF4885E28642B7A00140C2A /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				2E552679285EE0E800490A40 /* Assets.xcassets */,
 				2E55267B285EE0E800490A40 /* LaunchScreen.storyboard */,
 				2E55267E285EE0E800490A40 /* Info.plist */,
+				2EF4885C286420AA00140C2A /* StatsViewController.swift */,
+				2EF4885E28642B7A00140C2A /* StatsTableViewCell.swift */,
 			);
 			path = Dhyaan;
 			sourceTree = "<group>";
@@ -143,7 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E552685285EEBCD00490A40 /* SliderViewController.swift in Sources */,
+				2EF4885F28642B7A00140C2A /* StatsTableViewCell.swift in Sources */,
 				2E552671285EE0E200490A40 /* AppDelegate.swift in Sources */,
+				2EF4885D286420AA00140C2A /* StatsViewController.swift in Sources */,
 				2E552673285EE0E200490A40 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
